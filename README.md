@@ -9,10 +9,10 @@
 [Srikeerthana Kuchi](https://www.gla.ac.uk/schools/infectionimmunity/staff/srikeerthanakuchi/) 
 [Richard Orton](https://www.gla.ac.uk/schools/infectionimmunity/staff/richardorton/) \
 [David Robertson](https://www.gla.ac.uk/schools/infectionimmunity/staff/davidrobertson/) \
-[Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/) \
+[Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/)
 
 
-### [Timetable](/images/TimetableProposal.png)
+### [Timetable](/images/TimetableProposal.pdf)
 
 ### Practical Modules
 1. [Login, Setup & Basic Linux](docs/Basic_Linux.md)
