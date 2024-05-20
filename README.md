@@ -16,7 +16,7 @@
 1. [Login, Setup & Basic Linux](docs/Basic_Linux.md)
 2. [NGS data & QC](docs/NGS_data.md)
 3. [Read cleaning for alignment](docs/Read_cleaning.md)
-4. [Reference Alignment](docs/ReferenceAlign.md)
+4. [Reference Alignment](docs/RefAlign.md)
 5. [Bash File editing & text processing](docs/textFormatting.md)
 6. [Bash Conditions & Loops](docs/conditions_loops.md)
 7. [Introduction to MSA](docs/MSA.md)
