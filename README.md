@@ -1,5 +1,3 @@
-### **7th Annual training course on Viral Bioinformatics and Genomics (24 - 28 June 2024)**
-##### **Location: McCall computer cluster, Garscube campus, University of Glasgow, United Kingdom**
 
 ### Instructors
 
