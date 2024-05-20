@@ -6,7 +6,7 @@
 [Joseph Hughes](https://www.gla.ac.uk/schools/infectionimmunity/staff/josephhughes/) (Course Organizer) \
 [Derek Wright](https://www.gla.ac.uk/schools/infectionimmunity/staff/derekwright/) (co-organizer) \
 [Quan Gu](https://www.gla.ac.uk/schools/infectionimmunity/staff/quangu/) \
-[Srikeerthana Kuchi](https://www.gla.ac.uk/schools/infectionimmunity/staff/srikeerthanakuchi/) 
+[Srikeerthana Kuchi](https://www.gla.ac.uk/schools/infectionimmunity/staff/srikeerthanakuchi/) \
 [Richard Orton](https://www.gla.ac.uk/schools/infectionimmunity/staff/richardorton/) \
 [David Robertson](https://www.gla.ac.uk/schools/infectionimmunity/staff/davidrobertson/) \
 [Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/)
