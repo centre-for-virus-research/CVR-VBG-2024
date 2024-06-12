@@ -231,16 +231,13 @@ ggplot() +
 
 The current figure can be further improved in several aspects. We will focus on the text and the titles of the axis, in addition to the legend. We would like to have the x-axis title as "Date" and the y-axis title should be "Cumulative number of sequences". The formatting of the legend can also be changed.
 
-
-
 ``` r
-
-ggplot() + 
-geom_line( data = lineage_change, aes( x = sample_date, y = CumulativeCount, group=country, col=country ) ) + 
-theme_bw() + 
-xlab("Date")+ 
-ylab("Cumulative number of sequences") + 
-theme( legend.title = element_blank(), legend.position.inside = c(0.2,0.75) )
+ggplot() +
+  geom_line( data = lineage_change, aes( x = sample_date, y = CumulativeCount, group=country, col=country ) ) + 
+  theme_bw() + 
+  xlab("Date") + 
+  ylab("Cumulative number of sequences") + 
+  theme( legend.title = element_blank(), legend.position.inside = c(0.2,0.75) )
 
 ```
 
