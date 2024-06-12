@@ -229,19 +229,16 @@ ggplot() +
 
 #### 4.1 Axis labeling and titles
 
-The current figure can be further improved in several aspects. We will focus on the text and the titles of the axis, in addition to the legend. We would like to have the x-axis title as "Date" and the y-axis title should be "Cumulative number of sequences". Labels in the legend should also be modified. These can be achieved using the following functions:
+The current figure can be further improved in several aspects. We will focus on the text and the titles of the axis, in addition to the legend. We would like to have the x-axis title as "Date" and the y-axis title should be "Cumulative number of sequences". The formatting of the legend can also be changed.
 
--   `scale_x_continuous()`
--   `scale_color_discrete()`
--   `ylab()`
--   `legend.title` and `legend.position` in `theme()`
 
-\`\`\` r
+
+``` r
 
 ggplot() + geom_line( data = lineage_change, aes( x = sample_date, y = CumulativeCount, group=country, col=country ) ) + theme_bw() + xlab("Date")+ ylab("Cumulative number of sequences") + theme( legend.title = element_blank(), legend.position.inside = c(0.2,0.75) )
 
-\`\`
+```
 
 <img src="../images/plottingR/l5-1.png" width="672"/>
 
-I hope you've managed to pick-up some of the advantages of manipulating data and plotting in R. There is a huge amount to learn but hopefully this will be useful to you.
+I hope you've managed to pick-up some of the advantages of manipulating data and plotting in R. There is a huge amount to learn but hopefully this will be a starting point.
