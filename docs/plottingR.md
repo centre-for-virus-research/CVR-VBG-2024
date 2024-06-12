@@ -235,7 +235,12 @@ The current figure can be further improved in several aspects. We will focus on 
 
 ``` r
 
-ggplot() + geom_line( data = lineage_change, aes( x = sample_date, y = CumulativeCount, group=country, col=country ) ) + theme_bw() + xlab("Date")+ ylab("Cumulative number of sequences") + theme( legend.title = element_blank(), legend.position.inside = c(0.2,0.75) )
+ggplot() + 
+geom_line( data = lineage_change, aes( x = sample_date, y = CumulativeCount, group=country, col=country ) ) + 
+theme_bw() + 
+xlab("Date")+ 
+ylab("Cumulative number of sequences") + 
+theme( legend.title = element_blank(), legend.position.inside = c(0.2,0.75) )
 
 ```
 
