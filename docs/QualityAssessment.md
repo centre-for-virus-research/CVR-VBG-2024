@@ -30,7 +30,7 @@ In this practical, we will assess four metagenomic assemblies (BL, OS, US and co
 __*Which sample provided the best assembly? Which metrics supports this? Why doesn’t the “all_samples” assembly have the largest genome?*__
 
 
-<br/><br/>
+
 ***
 > ## NCBI eutilities
 > 
@@ -40,7 +40,9 @@ __*Which sample provided the best assembly? Which metrics supports this? Why doe
 > 
 > Helpful examples: <https://bioinformatics.cvr.ac.uk/ncbi-entrez-direct-unix-e-utilities/>
 ***
-<br/>
+
+
+
 
 4) It is also possible to run QUAST/metaQUAST with a reference. As we are expecting to find Lassavirus, lets download Lassavirus sequences (two segment L and S) directly from the command line using NCBI eutilites:
 
