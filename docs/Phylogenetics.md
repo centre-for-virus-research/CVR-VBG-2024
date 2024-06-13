@@ -1,4 +1,4 @@
- # Phylogenetics Practical
+# Phylogenetics Practical
 
 David L Robertson, MRC-University of Glasgow Centre for Virus Research
 
