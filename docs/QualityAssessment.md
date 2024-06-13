@@ -4,7 +4,7 @@
 In this practical, we will assess four metagenomic assemblies (BL, OS, US and combined) from two different rodents (sample 00094 and 00187).
 
 ***
-> ## QUAST
+> #### QUAST
 > 
 > Quality Assessment Tool for Genome Assemblies – QUAST/metaQUAST
 > 
@@ -32,7 +32,7 @@ __*Which sample provided the best assembly? Which metrics supports this? Why doe
 
 
 ***
-> ## NCBI eutilities
+> #### NCBI eutilities
 > 
 > Useful set of commands for interfacing with NCBI directly from the command line
 > 
