@@ -5,12 +5,8 @@ rank: 9
 ---
 
 # RNA-Seq Workshop
-
-Quan Gu, MRC-University of Glasgow Centre for Virus Research
-
-[**quan.gu@glasgow.ac.uk**](mailto:quan.gu@glasgow.ac.uk) 
-
-**Background**
+## 7th Viral Bioinformatics and Genomics Training Course, Glasgow, UK
+#### Quan Gu, MRC-University of Glasgow Centre for Virus Research, E-mail: quan.gu@glasgow.ac.uk 
 
 A classical RNA-Seq data processing pipeline contains the following steps:
 
@@ -162,6 +158,78 @@ Rscript /home4/VBG_data/RNASeq/edgeR.r
 ```
 
 Then you will get the output files: **DEG_edgeR.csv**, **cpm.csv** , **bcvplot.pdf**, **VolcanoPlot.png** and **mdsplot.pdf**. Check the output files and explore what they stand for.
+
+Now let us explain the **edgeR** command here. **edgeR** works on a table of integer read counts, with rows corresponding to genes and columns to independent libraries. First we read the table
+
+```
+library(edgeR)
+output <- read.table("DE1input.txt",header=T)
+output2<-output[,-1]
+samplescondition<-c(rep("Mock",3),rep("IFNb",3))
+samplesshortname<- c("Mock01","Mock02","Mock03","IFNb01","IFNb02","IFNb03")
+rownames(output2)<- output[,1]
+colnames(output2)<- samplesshortname
+```
+After then, we calculate the Count Per Million of each gene, which is used as estimated gene expression values.
+```
+output3<-cpm(output2)
+write.csv(output3,file="cpm.csv")
+```
+We could filter the genes which did not occur frequently. Here we're only keeping a gene if it has a cpm of 1 or greater for at least three samples. This step is optional.
+```
+keep <- rowSums(cpm(output2)>1) >=3
+output2 <- output2[keep,]
+```
+**edgeR** stores data in a simple list-based data object called a DGEList. This type of object is easy to use because it can be manipulated like any list in R. We can do it in R by specifying the counts and the groups in the function DGEList().
+```
+d=DGEList(counts=output2,group= factor(samplescondition))
+```
+**edgeR** is concerned with differential expression analysis rather than with the quantification of expression levels. The calcNormFactors() function in **edgeR** normalizes RNA composition by calculating a set of scaling factors for the library sizes. These scaling factors minimize the log-fold changes between samples for most genes. The default method for computing these scale factors is the trimmed mean of M-values (TMM) between each pair of samples. The product of the original library size and the scaling factor is called the effective library size. This effective library size replaces the original library size in all downstream analyses.
+```
+d=calcNormFactors(d)
+```
+We could use MDS plot to explore the relationship among the samples. An MDS is conceptually similar to a PCA. One of the main differences is that it requires input data to be in a different format. As PCA uses raw genotypes and can accommodate data at the individual level, pairwise distances between data points are used for an MDS.
+```
+plotMDS(d, labels = samplesshortname, col = c("red","blue")[factor(samplescondition)])
+```
+The first major step in analyzing data is to estimate the dispersion parameter for each tag, which measures the degree of inter-library variation for that tag. Estimating the common dispersion provides an understanding of the overall variability across the genome for this dataset.
+
+```
+d =estimateCommonDisp(d)
+```
+Here we use empirical Bayes tagwise dispersions.
+```
+d =estimateTagwiseDisp(d)
+```
+plotBCV() plots the tagwise biological coefficient of variation (square root of dispersions) against log2-CPM. 
+```
+plotBCV(d,ylim=c(0,1.5))
+plotBCV(d)
+```
+Once the dispersions are estimated, we can proceed with testing procedures for determining differential expression. We use the "classical" model in **edgeR** here. 
+The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR).
+```
+de = exactTest(d, pair = c("Mock","IFNb"))
+tt = topTags(de, n=nrow(d))
+nc = cpm(d, normalized.lib.sizes=TRUE)
+rn = rownames(tt$table)
+head(nc[rn,order(samplescondition)],5)
+deg = rn[tt$table$FDR < .05]
+hihi<-tt[tt$table$FDR < .05,]
+```
+Output the file into CSV file. We will have the information of Gene ID, log2 Fold Change, P-value, FDR, etc.
+```
+write.csv(hihi$table, file="DEG_edgeR.csv")
+```
+Now we could plot the top Differential Expressed genes by Volcano plot.
+```
+library(org.Hs.eg.db)
+library(AnnotationDbi)
+png('VolcanoPlot.png')
+hihi$table$symbol<-mapIds(org.Hs.eg.db,keys=rownames(hihi$table),keytype="ENSEMBL",column="SYMBOL")
+library(EnhancedVolcano)
+EnhancedVolcano(hihi$table, x= "logFC", y = "FDR", lab = hihi$table$symbol)
+```
 
 **Task 4**: After running the edgeR code, please check the output files.  How to explore the relationships among samples? How many DE genes do we have? What is the cut-off of the FDR P-value? What are the CPM values?
 
