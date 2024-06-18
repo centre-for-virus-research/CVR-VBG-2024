@@ -208,7 +208,7 @@ plotBCV(d,ylim=c(0,1.5))
 plotBCV(d)
 ```
 Once the dispersions are estimated, we can proceed with testing procedures for determining differential expression. We use the "classical" model in **edgeR** here. 
-The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR).
+The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR). We use FDR<5% as the default cut-off.
 ```
 de = exactTest(d, pair = c("Mock","IFNb"))
 tt = topTags(de, n=nrow(d))
