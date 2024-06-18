@@ -46,7 +46,7 @@ ln -s /home4/VBG_data/RNASeq/IFNb01.fastq .
 ```
 
 We need to make soft links to the reference genome file as well. I have downloaded the genome and GTF files. We could go to RefSeq, Ensembl or UCSC website to download the latest version of the human genome (GRCh38/hg38).
-You could download it via https://ftp.ensembl.org/pub/
+E.g. You could download the files via Ensembl https://ftp.ensembl.org/pub/
 
 ```
 ln -s /home4/VBG_data/RNASeq/Human.fa .
