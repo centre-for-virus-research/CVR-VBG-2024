@@ -26,8 +26,8 @@ Open MobaXterm and log on to the CVR-Alpha2 server.
 Step 1: Create a working directory and go to your directory using the commands:
 
 ```
-mkdir RNASeq2023
-cd RNASeq2023
+mkdir MyRNASeq
+cd MyRNASeq
 ```
   
 This workshop use single-end strand-specific RNA-Seq reads from six samples (6 fastq files), located in **/home4/VBG_data/RNASeq**
