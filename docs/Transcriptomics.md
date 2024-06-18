@@ -203,14 +203,14 @@ Here we use empirical Bayes tagwise dispersions.
 ```
 d =estimateTagwiseDisp(d)
 ```
-In addition to the common and tagwise disperson of classic model, we can also estimate a generalized linear model (GLM) fit This pipeline splits into two distinct approaches (GLM Likelihood Ratio Test or GLM Quasi-Likelihood F-test) with stricter error rate. Althouh we introduce classic model here, you could still read **edgeR** mannual if you are interested with GLM model.
+In addition to the common and tagwise disperson of classic model, we can also estimate a generalized linear model (GLM) fit This pipeline splits into two distinct approaches (GLM Likelihood Ratio Test or GLM Quasi-Likelihood F-test) with stricter error rate. Although we only introduce classic model here, you could still read **edgeR** manual if you are interested with GLM model.
 
 plotBCV() plots the tagwise biological coefficient of variation (square root of dispersions) against log2-CPM. 
 ```
 plotBCV(d,ylim=c(0,1.5))
 plotBCV(d)
 ```
-Once the dispersions are estimated, we can proceed with testing procedures for determining differential expression. We use the "classic" model in **edgeR** here. The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR). We use FDR<5% as the default cut-off.
+Once the dispersions are estimated, we can proceed with testing procedures for determining differential expression. The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR). We use FDR<5% as the default cut-off.
  
 ```
 de = exactTest(d, pair = c("Mock","IFNb"))
