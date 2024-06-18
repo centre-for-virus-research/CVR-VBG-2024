@@ -171,7 +171,7 @@ samplesshortname<- c("Mock01","Mock02","Mock03","IFNb01","IFNb02","IFNb03")
 rownames(output2)<- output[,1]
 colnames(output2)<- samplesshortname
 ```
-After then, we calculate the Count Per Million of each gene, which is used as estimated gene expression values.
+After then, we calculate the Count Per Million (CPM) of each gene, which is used as estimated gene expression values.
 ```
 output3<-cpm(output2)
 write.csv(output3,file="cpm.csv")
