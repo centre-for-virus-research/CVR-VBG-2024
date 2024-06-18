@@ -14,8 +14,8 @@ A classical RNA-Seq data processing pipeline contains the following steps:
 • Mapping RNA-Seq reads against a reference genome \
 • Visualizing reads and transcript structures \
 • Performing differential expression analysis \
-• Visualizing differential expression analysis (Briefly, we will introduce more on visualization at Friday session) \
-• Functional annotation and pathway analysis (Briefly, we will introduce more at Friday session)
+• Visualizing differential expression analysis (we will introduce more on DE analysis and visualization at Friday's session by **Srikeerthana Kuchi**) \
+• Functional annotation and pathway analysis (we will introduce more detail at Friday session by **Srikeerthana Kuchi**)
 
 In this course, all the data we are using has been subsampled to save time and space.
 
