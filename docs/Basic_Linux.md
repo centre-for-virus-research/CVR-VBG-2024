@@ -462,7 +462,7 @@ This command kills the job with the process id 1234. As a user you can kill only
 9. In the file “NC_038294.1_cds_YP_007188577.3_1.fa”, count the number of lines containing the sub-sequence “CCCCC”.
 10. How do you stop a process with pid 5678?
 11. Re-execute your previous command using a keyboard shortcut.
-12. Create a new directory named ‘Trial_move’ and move all files whose names begin with ‘ls NC_014470.1_cds_YP’ into the ‘Trial_move’ directory.
+12. Create a new directory named ‘Trial_move’ and move all files whose names begin with ‘NC_014470.1_cds_YP’ into the ‘Trial_move’ directory.
 13. Which is the command used to remove or delete a file without a confirmation prompt?
 14. __________ command is used to count the total number of lines, words and character in a file.
 15. From the headers of all the fasta files (except the Betacoronaviruses.fa) present in the Exercises directory, extract fields 2 to 4 using the space delimiter.
