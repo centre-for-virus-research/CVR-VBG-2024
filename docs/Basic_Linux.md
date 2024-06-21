@@ -361,7 +361,7 @@ Few options:
 -w: word match 
 ```
 
-To get the list of all Influenza D viruses from 'human_viruses.txt' file,
+To get the list of all "Influenza D" viruses from 'human_viruses.txt' file,
 
 ```bash
 grep "Influenza D" human_viruses.txt
@@ -456,7 +456,7 @@ This command kills the job with the process id 1234. As a user you can kill only
 3. How many fasta files are there in the “Exercises” directory?
 4. Extract all fasta header lines from the file “Betacoronaviruses.fa”.
 5. How many fasta sequences are present in the file “Betacoronaviruses.fa”?
-6. Copy the file “outbreak.csv” file from the “Linux_data” directory into “Exercises” directory and rename it as 2024_2023_outbreak.csv.
+6. Copy the file “outbreak.csv” file from the “Linux” directory into “Exercises” directory and rename it as "2024_2023_outbreak.csv".
 7. From the file “2024_2023_outbreak.csv”, get the list of countries that had at least two outbreaks in 2024.
 8. Find the 50th line of the file “NC_039207.1_cds_YP_009513010.1_3.fa” using only the ‘tail’ and ‘head’ command.
 9. In the file “NC_038294.1_cds_YP_007188577.3_1.fa”, count the number of lines containing the sub-sequence “CCCCC”.
