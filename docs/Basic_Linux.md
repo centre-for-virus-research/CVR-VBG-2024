@@ -384,7 +384,7 @@ The uniq command extracts unique lines from the input. It is usually used in com
 To get the list of countries that has had an outbreak in 2024:
 
 ```bash
-grep "2024" outbreak.csv | cut -d, -f3 | sort | uniq
+grep "2024" outbreak.csv | cut -d"," -f3 | sort | uniq
 ```
 
 Other text processing commands worth looking at are: tr, rev, sed and paste.
