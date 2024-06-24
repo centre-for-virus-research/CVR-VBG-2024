@@ -361,7 +361,7 @@ Few options:
 -w: word match 
 ```
 
-To get the list of all Influenza D viruses from 'human_viruses.txt' file,
+To get the list of all "Influenza D" viruses from 'human_viruses.txt' file,
 
 ```bash
 grep "Influenza D" human_viruses.txt
@@ -384,7 +384,7 @@ The uniq command extracts unique lines from the input. It is usually used in com
 To get the list of countries that has had an outbreak in 2024:
 
 ```bash
-grep "2024" outbreak.csv | cut -d, -f3 | sort | uniq
+grep "2024" outbreak.csv | cut -d"," -f3 | sort | uniq
 ```
 
 Other text processing commands worth looking at are: tr, rev, sed and paste.
@@ -456,13 +456,13 @@ This command kills the job with the process id 1234. As a user you can kill only
 3. How many fasta files are there in the “Exercises” directory?
 4. Extract all fasta header lines from the file “Betacoronaviruses.fa”.
 5. How many fasta sequences are present in the file “Betacoronaviruses.fa”?
-6. Copy the file “outbreak.csv” file from the “Linux_data” directory into “Exercises” directory and rename it as 2024_2023_outbreak.csv.
+6. Copy the file “outbreak.csv” file from the “Linux” directory into “Exercises” directory and rename it as "2024_2023_outbreak.csv".
 7. From the file “2024_2023_outbreak.csv”, get the list of countries that had at least two outbreaks in 2024.
 8. Find the 50th line of the file “NC_039207.1_cds_YP_009513010.1_3.fa” using only the ‘tail’ and ‘head’ command.
 9. In the file “NC_038294.1_cds_YP_007188577.3_1.fa”, count the number of lines containing the sub-sequence “CCCCC”.
 10. How do you stop a process with pid 5678?
 11. Re-execute your previous command using a keyboard shortcut.
-12. Create a new directory named ‘Trial_move’ and move all files whose names begin with ‘ls NC_014470.1_cds_YP’ into the ‘Trial_move’ directory.
+12. Create a new directory named ‘Trial_move’ and move all files whose names begin with ‘NC_014470.1_cds_YP’ into the ‘Trial_move’ directory.
 13. Which is the command used to remove or delete a file without a confirmation prompt?
 14. __________ command is used to count the total number of lines, words and character in a file.
 15. From the headers of all the fasta files (except the Betacoronaviruses.fa) present in the Exercises directory, extract fields 2 to 4 using the space delimiter.
@@ -471,3 +471,26 @@ This command kills the job with the process id 1234. As a user you can kill only
 18. Which command would you use to find the word “pattern” from the file, “filename.txt”? Using that command, extract the “BioProject” information from the file SARS-CoV-2.gb.
 19. Use the file SARS-CoV-2.gb to extract protein identifiers (“protein_id”). Remove the pattern “protein_id” from the output.
 20. Which option with the command “rm” is required to remove a directory?
+
+## Solutions
+
+1. cd Linux/Exercises
+2. head -100 NC_006577.2_cds_YP_173236.1_1.fa > output_1.fa 
+3. ls *.fa | wc -l
+4. grep "^>" Betacoronaviruses.fa
+5. grep "^>" Betacoronaviruses.fa | wc -l
+6. cp ../outbreak.csv 2024_2023_outbreak.csv 
+7. grep "2024" 2024_2023_outbreak.csv | cut -d"," -f3 | sort | uniq -c | grep -v 1
+8. head -50 NC_039207.1_cds_YP_009513010.1_3.fa | tail -1
+9. grep “CCCCC” NC_038294.1_cds_YP_007188577.3_1.fa | wc -l
+10. kill 5678
+11. !!
+12. mkdir Trial_move; mv NC_014470.1_cds_YP* Trial_move/.
+13. rm –f filename
+14. wc
+15. grep "^>" *.fa | grep -v Betacoronaviruses.fa | cut -d' ' -f2-4
+16. head -10 2024_2023_outbreak.csv | sort > outbreak1.csv; head -20 2024_2023_outbreak.csv | sort > outbreak2.csv
+17. comm -12 outbreak1.csv outbreak2.csv > output3
+18. grep "BioProject" SARS-CoV-2.gb 
+19. grep "protein_id" SARS-CoV-2.gb | cut -d"=" -f2
+20. rm –r dirname
