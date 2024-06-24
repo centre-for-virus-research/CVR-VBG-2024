@@ -483,14 +483,14 @@ This command kills the job with the process id 1234. As a user you can kill only
 7. grep "2024" 2024_2023_outbreak.csv | cut -d"," -f3 | sort | uniq -c | grep -v 1
 8. head -50 NC_039207.1_cds_YP_009513010.1_3.fa | tail -1
 9. grep “CCCCC” NC_038294.1_cds_YP_007188577.3_1.fa | wc -l
-10.kill 5678
-11.!!
-12.mkdir Trial_move; mv NC_014470.1_cds_YP* Trial_move/.
-13.rm –f <filename>
-14.wc
-15.grep "^>" *.fa | grep -v Betacoronaviruses.fa | cut -d' ' -f2-4
-16.head -10 2024_2023_outbreak.csv | sort > outbreak1.csv; head -20 2024_2023_outbreak.csv | sort > outbreak2.csv
-17.comm -12 outbreak1.csv outbreak2.csv > output3
-18.grep "BioProject" SARS-CoV-2.gb 
-19.grep "protein_id" SARS-CoV-2.gb | cut -d"=" -f2
-20.rm –r <dirname>
+10. kill 5678
+11. !!
+12. mkdir Trial_move; mv NC_014470.1_cds_YP* Trial_move/.
+13. rm –f <filename>
+14. wc
+15. grep "^>" *.fa | grep -v Betacoronaviruses.fa | cut -d' ' -f2-4
+16. head -10 2024_2023_outbreak.csv | sort > outbreak1.csv; head -20 2024_2023_outbreak.csv | sort > outbreak2.csv
+17. comm -12 outbreak1.csv outbreak2.csv > output3
+18. grep "BioProject" SARS-CoV-2.gb 
+19. grep "protein_id" SARS-CoV-2.gb | cut -d"=" -f2
+20. rm –r <dirname>
