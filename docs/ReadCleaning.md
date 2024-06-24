@@ -10,7 +10,7 @@ In this practical, we will be:
 
 ## Dataset
 First let’s copy over a folder of data to analyse.
-The *-r* flag means copy recursively, i.e. copy the directory and its contents.
+The **-r** flag means copy recursively, i.e. copy the directory and its contents.
 ```
     cp -r /home3/dw73x/RawReads ~/ 
 ```
@@ -58,8 +58,8 @@ There are many options. To view the full set of options:
 trim_galore --help
 ```
 Useful options include:
-- *–-paired* may be used for paired-end reads, which have two files for each sample. 
-- *–-fastqc* may be added to additionally run FASTQC in a single step.
+- **–-paired** may be used for paired-end reads, which have two files for each sample. 
+- **–-fastqc** may be added to additionally run FASTQC in a single step.
 
 Let's trim our paired-end read files:
 ```
