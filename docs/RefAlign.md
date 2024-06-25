@@ -486,7 +486,7 @@ Breaking this command down, there are two parts:
 	* **-A** = count orphan reads (reads whose pair did not map)
 	* **-d 0** = override the maximum depth (default is 8000 which is typically too low for viruses)
 	* **-Q 0** = minimum base quality, 0 essentially means all the data
-2. ivar [consensus](https://andersen-lab.github.io/ivar/html/manualpage.html) - this calls the consensus - the output of the samtools mpileup command is piped '|' directly into ivar
+2. ivar [consensus](https://andersen-lab.github.io/ivar/html/manualpage.html) - this calls the consensus - the output of the samtools mpileup command is piped `|` directly into ivar
 	* -p S1 = prefix with which to name the output file
 	* -t 0.4 = the minimum frequency threshold that a base must match to be used in calling the consensus base at a position. In this case, an ambiguity code will be used if more than one base is > 40% (0.4). See [iVar manual](https://andersen-lab.github.io/ivar/html/manualpage.html)
 
