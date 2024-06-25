@@ -317,7 +317,7 @@ Few options:
 -f: field number 
 ```
 
-We have a text file named "human_viruses.txt" with with information containing the names of the viruses, GenBank ids and genome length. These fields are separated by "|" symbol.
+We have a text file named "human_viruses.txt" with with information containing the names of the viruses, GenBank ids and genome length. These fields are separated by `|` symbol.
 
 ```bash
 head human_viruses.txt
@@ -408,7 +408,7 @@ To redirect stdout and stderr to a file use "&>".
 
 #### Pipes
 
-Piping in Linux is a very powerful and efficient way to combine commands. Pipes (|) in Linux act as connecting links between commands. Pipe redirects output of the first command as an input to the next command. We can nest as many commands as we want using pipes. They ensure smooth running of the command flow and reduces the execution time. 
+Piping in Linux is a very powerful and efficient way to combine commands. Pipes `|` in Linux act as connecting links between commands. Pipe redirects output of the first command as an input to the next command. We can nest as many commands as we want using pipes. They ensure smooth running of the command flow and reduces the execution time. 
 
 To print 10 smallest viruses,
 
