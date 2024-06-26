@@ -353,3 +353,14 @@ do
 	echo $file
 done
 ```
+
+---
+### Exercise 
+
+### Write a reference mapping pipeline.
+- Take the input fastq and reference from the command line.
+- Clean the reads using trim_galore
+- Index the reference sequence with the bwa index
+- Map the reads to reference using bwa mem.
+- Convert bam to consensus file.
+- Get the mapping statistics.
