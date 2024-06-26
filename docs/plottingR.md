@@ -4,12 +4,23 @@ Joseph Hughes, MRC-University of Glasgow Centre for Virus Research
 
 R is a great additional language to learn as it has many statistical packages and lots of packages for plotting data. In this practical, you will learn to do basic plots using *ggplot2* with a data set from the COG-UK consortium with the number of SARS-CoV2 sequences from different countries up to the 9th December 2020.
 
-For this practical, we will be working using Rstudio locally on your windows computer. First you will need download the data from the server using MobaXterm. It can be found in `/home4/VBG_data/Rplotting/cog_global_2020-12-09_public.csv`.
+**Note** Normally I work using Rstudio on my local mac and the plan was to do the same on the windows computor this practical, we will be working using Rstudio locally on your windows computers, however, I've struggled to get I.T. to install the packages on the visitor accounts. Therefore, we will be working on the server in R and downloading using MobaXterm the figures that we produce. 
+
+1. First login to alpha2 using your credentials.
+2. Create a new directory for everything we will do in this practical. Let's call it `Rplots`
+3. Change directory into `Rplots`
+4. Copy the data file into `cp /home4/VBG_data/Rplotting/cog_global_2020-12-09_public.csv .`
+
+
+Now it is time to launch R on the server, we do this by simply typing `R`
+
+
+
 
 The following command will install a package that makes it easy to customize ggplots with no advanced programming skills.
 
 ``` r
-require(ggpubr)
+require(ggplot2)
 ```
 
 If that didn't work, then you first need to install the package and then run the command.
@@ -21,7 +32,7 @@ require(ggpubr)
 
 ### 1. Data import
 
-If your working directory is the same as the folder containing the **cog_global_2020-12-09_public.csv**, you can read the file as described below. Use `getwd()` to check your working directory and `setwd()` to set a working directory (likely, **setwd(“\~/Downloads”)**).
+If your working directory is the same as the folder containing the **cog_global_2020-12-09_public.csv**, you can read the file as described below. Use `getwd()` to check your working directory and `setwd()` to set a working directory (likely, **setwd("\~/Rplots")**).
 
 ``` r
 cog_data = read.csv( file = "cog_global_2020-12-09_public.csv", header = TRUE )
@@ -56,7 +67,19 @@ ggplot() +
   geom_bar( data = per_country_count, aes( x = country, y = n ), stat="identity" )
 ```
 
+The following image should open in an X-window. 
+
+
 <img src="../images/plottingR/bar1-1.png" width="768" style="display: block; margin: auto;"/>
+
+
+It is also possible to save the image with the following command
+
+``` r
+ggsave("seq_per_country.pdf")
+```
+
+Then, using mobaXterm, you can download the image to your local computer.
 
 We can see the names of those countries mingling together. There are several ways to fix the issue; for example, set the axis text to smaller size. What we will do is to flip the axis by simply setting `x` as number of sequences (n) and `y` as the country.
 
@@ -244,3 +267,8 @@ ggplot() +
 <img src="../images/plottingR/l5-1.png" width="672"/>
 
 I hope you've managed to pick-up some of the advantages of manipulating data and plotting in R. There is a huge amount to learn but hopefully this will be a starting point.
+
+### 5. Extra exercise
+
+If time allows, use the file in `home4/VBG_data/Rplotting/depth.txt` to plot the coverage. The file was produced using `samtools depth`. The file doesn't have a header but the first column is the name of the reference sequence used, the second column is the position in the reference sequence and the thrid column is the depth.
+
