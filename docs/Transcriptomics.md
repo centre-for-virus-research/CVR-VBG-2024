@@ -193,6 +193,8 @@ We could use MDS plot to explore the relationship among the samples. An MDS is c
 ```
 plotMDS(d, labels = samplesshortname, col = c("red","blue")[factor(samplescondition)])
 ```
+![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-MDSplot.png)
+
 The first major step in analyzing data is to estimate the dispersion parameter for each tag, which measures the degree of inter-library variation for that tag. Estimating the common dispersion provides an understanding of the overall variability across the genome for this dataset.
 
 ```
@@ -210,6 +212,9 @@ plotBCV() plots the tagwise biological coefficient of variation (square root of 
 plotBCV(d,ylim=c(0,1.5))
 plotBCV(d)
 ```
+
+![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-bcvplot.png)
+
 Once the dispersions are estimated, we can proceed with testing procedures for determining differential expression. The exactTest() function performs tagwise tests using the exact negative binomial test. The test results for the n most significant tags can be conveniently displayed using the topTags() function. By default, Benjamini and Hochberg's algorithm is employed to control the false discovery rate (FDR). We use FDR<5% as the default cut-off.
  
 ```
@@ -234,6 +239,7 @@ hihi$table$symbol<-mapIds(org.Hs.eg.db,keys=rownames(hihi$table),keytype="ENSEMB
 library(EnhancedVolcano)
 EnhancedVolcano(hihi$table, x= "logFC", y = "FDR", lab = hihi$table$symbol)
 ```
+![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-VolcanoPlot.png)
 
 **Task 4**: After running the edgeR code, please check the output files.  How to explore the relationships among samples? How many DE genes do we have? What is the cut-off of the FDR P-value? What are the CPM values?
 
