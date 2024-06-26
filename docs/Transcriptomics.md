@@ -30,7 +30,7 @@ mkdir MyRNASeq
 cd MyRNASeq
 ```
   
-This workshop use single-end strand-specific RNA-Seq reads from six samples (6 fastq files), located in **/home4/VBG_data/RNASeq**
+This workshop use single-end strand-specific RNA-Seq reads from six samples (6 fastq files, which have been sub-sampled), located in **/home4/VBG_data/RNASeq**
 
 You will generate soft links to these files in your current directory. 
 
@@ -278,6 +278,9 @@ cat DEG_edgeR.csv|sed 's/"//g'| awk 'NR>1' | cut -f1 -d',' > gene.glist
 Rscript /home4/VBG_data/RNASeq/Reactome.r hs gene.glist ./ 20
 ```
 Then you will get the output files: **gene.bubble.pdf**, **gene.SigReactome.xls**. The pdf file is the figure of the top 20 pathways enrichment of our significant DE genes. The xls file is the table of details of all the pathways (with P-value < 0.05) of our significant DE genes.  
+
+![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-pathway.png)
+
 
 Here we have some bonus questions:
 
