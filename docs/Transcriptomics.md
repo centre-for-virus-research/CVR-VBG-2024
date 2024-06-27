@@ -254,7 +254,7 @@ The user guide of **Reactome** is here (https://reactome.org/userguide/analysis)
 
 **Task 5**: Try to find the top 20 pathways of our significant DE genes list.
 
-Alternatively, you could directly run the **Reactome** R script I have written for you, which is also at director /home4/VBG_data/RNASeq.
+Alternatively, you could directly run the **Reactome** R script I have written for you, which is also at the folder /home4/VBG_data/RNASeq.
 
 
 Here we have some bonus questions:
