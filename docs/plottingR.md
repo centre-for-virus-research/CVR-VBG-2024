@@ -23,7 +23,7 @@ The following command will install a package that makes it easy to customize ggp
 require(ggplot2)
 ```
 
-If that didn't work, then you first need to install the package and then run the command.
+Then run the command.
 
 ``` r
 install.packages("ggpubr")
@@ -270,5 +270,5 @@ I hope you've managed to pick-up some of the advantages of manipulating data and
 
 ### 5. Extra exercise
 
-If time allows, use the file in `home4/VBG_data/Rplotting/depth.txt` to plot the coverage. The file was produced using `samtools depth`. The file doesn't have a header but the first column is the name of the reference sequence used, the second column is the position in the reference sequence and the thrid column is the depth.
+If time allows, use the file in `/home4/VBG_data/Rplotting/depth.txt` to plot the coverage. The file was produced using `samtools depth`. The file doesn't have a header but the first column is the name of the reference sequence used, the second column is the position in the reference sequence and the thrid column is the depth.
 
