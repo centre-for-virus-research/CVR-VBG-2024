@@ -1,7 +1,6 @@
 ---
 title: "Transcriptomics"
 layout: default
-rank: 9
 ---
 
 # RNA-Seq Workshop
