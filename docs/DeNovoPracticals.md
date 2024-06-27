@@ -85,6 +85,10 @@ Though it is an assembly program for high throughput reads, IDBA_UD works only w
 
 ```
 fq2fa --merge ../SRR21065613_1_val_1.fq ../SRR21065613_2_val_2.fq reads.fa
+```
+
+Now run IDBA program
+```
 idba_ud --mink=21 --maxk=81 step=10 -r reads.fa -o . --num_threads=4
 ```
 
