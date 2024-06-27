@@ -154,15 +154,15 @@ rm human.sam
 7. **--output kraken_output.txt** = the name of the kraken output file to create
 8. **--report kraken_report.txt** = the name of the kraken report output file to create
 
-**NB:** The --minimum-hit-groups flag specifies the minimum number of ‘hit groups’ needed to make a classification call. Hit groups are overlapping k-mers sharing the same minimizer. Kraken 2 uses minimizers to compress the input genomic sequences, thereby reducing storage memory needed and run time. In this example, we increase the minimum number of hit groups from the default two groups to three groups for increased accuracy. See [Kraken2 manual](https://github.com/DerrickWood/kraken2/wiki/Manual)
+**NB:** The --minimum-hit-groups flag specifies the minimum number of ‘hit groups’ needed to make a classification call. Hit groups are overlapping k-mers sharing the same minimizer (one way to think of them is a small kmer of overlapping jmers). Kraken 2 uses minimizers to compress the input genomic sequences, thereby reducing storage memory needed and run time. In this example, we increase the minimum number of hit groups from the default two groups to three groups for increased accuracy. See [Kraken2 manual](https://github.com/DerrickWood/kraken2/wiki/Manual)
 
 Overall, this command will output two files - our kraekn_output.txt file and our kraken_report.txt file. The kraken_output.txt is large and not really human readable whereas the kraken_report.txt is a human readable summary that is tab-delimited, with one line per taxon. The fields of the output, from left-to-right, are as follows:
 
 1. Percentage of reads covered by the clade rooted at this taxon
 2. Number of reads covered by the clade rooted at this taxon
 3. Number of reads assigned directly to this taxon
-4. Number of minimizers in read data associated with this taxon (new)
-5. An estimate of the number of distinct minimizers in read data associated with this taxon (new)
+4. Number of minimizers (which represent a kmer a group) in all the read data that was used for assigning reads with this taxon
+5. An estimate of the number of distinct minimizers in read data associated with this taxon. This can allows users to better determine if Kraken's classifications are due to reads distributed throughout a reference genome, or due to only a small segment of a reference genome (and therefore likely false positive).
 6. A rank code, indicating (U)nclassified, (D)omain, (K)ingdom, (P)hylum, (C)lass, (O)rder, (F)amily, (G)enus, or (S)pecies. All other ranks are simply '-'.
 7. NCBI taxonomy ID
 8. indented scientific name
