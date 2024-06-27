@@ -17,6 +17,8 @@ In this practical, we will assess four metagenomic assemblies (BL, OS, US and co
 
 ```mkdir validation```
 
+```cd validation```
+
 ```ln -s /home4/VBG_data/QualityAssessment/Contigs_00094/00094_* .```
 
 2) Run metaQUAST with the basic command
@@ -54,7 +56,7 @@ __*Which sample provided the best assembly? Which metrics supports this? Why doe
 
 6) Run the metaQUAST command, this time using as a reference Lassa_L.fasta and Lassa_S.fasta with the `-R` argument:
 
-`metaquast.py -l "all, US, OS, BL" Contigs_00187/00187_all_samples_contigs.fasta Contigs_00187/00187_US_L_NA_S26_contigs.fasta Contigs_00187/00187_OS_L_NA_S24_contigs.fasta Contigs_00187/00187_BL_L1_NA_S5_contigs.fasta -R Lassa_L.fasta,Lassa_S.fasta`
+`metaquast.py -l "all, US, OS, BL" 00187_all_samples_contigs.fasta 00187_US_L_NA_S26_contigs.fasta 00187_OS_L_NA_S24_contigs.fasta 00187_BL_L1_NA_S5_contigs.fasta -R Lassa_L.fasta,Lassa_S.fasta`
 
 7) Look at the report using firefox as before
 
