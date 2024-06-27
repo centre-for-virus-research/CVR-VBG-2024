@@ -247,46 +247,14 @@ points(tt$table$logFC[tol10b.depleted], -10*log10(tt$table$PValue[tol10b.deplete
 ### 6. Function annotation and pathway analysis ### 
 Once we get the differential expression gene list, the next step is to annotate them and
 analyse their function and pathways. There are many free online tools available. 
-One of the
-best-known tools is **David** (https://david.ncifcrf.gov/tools.jsp). 
+One of the best-known tools is **David** (https://david.ncifcrf.gov/tools.jsp). 
 We could also try **Reactome**
 (https://reactome.org), which is highly recommended. 
 The user guide of **Reactome** is here (https://reactome.org/userguide/analysis). You could copy and paste the significant DE genes ID list from **DEG_edgeR.csv** and run analysis. 
 
 **Task 5**: Try to find the top 20 pathways of our significant DE genes list.
 
-Alternatively, you could directly run the **Reactome** R script I have written for you. 
-
-You can simply type this command line :
-
-```
-R
-```
-
-When R opens,
-```
-BiocManager::install("ReactomePA")
-install.packages("stringr", repos='http://cran.us.r-project.org')
-Install.packages("ggplot2")
-BiocManager::install("clusterProfiler")
-install.packages("tidyverse")
-
-```
-say "yes"
-once installed, type 
-```
-q()
-
-```
-Then please run these code in your terminal:
-
-```
-cat DEG_edgeR.csv|sed 's/"//g'| awk 'NR>1' | cut -f1 -d',' > gene.glist
-Rscript /home4/VBG_data/RNASeq/Reactome.r hs gene.glist ./ 20
-```
-Then you will get the output files: **gene.bubble.pdf**, **gene.SigReactome.xls**. The pdf file is the figure of the top 20 pathways enrichment of our significant DE genes. The xls file is the table of details of all the pathways (with P-value < 0.05) of our significant DE genes.  
-
-![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-pathway.png)
+Alternatively, you could directly run the **Reactome** R script I have written for you, which is also at director /home4/VBG_data/RNASeq.
 
 
 Here we have some bonus questions:
