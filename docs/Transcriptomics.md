@@ -232,14 +232,15 @@ write.csv(hihi$table, file="DEG_edgeR.csv")
 ```
 Now we could plot the top Differential Expressed genes by Volcano plot.
 ```
-library(org.Hs.eg.db)
-library(AnnotationDbi)
 png('VolcanoPlot.png')
-hihi$table$symbol<-mapIds(org.Hs.eg.db,keys=rownames(hihi$table),keytype="ENSEMBL",column="SYMBOL")
-library(EnhancedVolcano)
-EnhancedVolcano(hihi$table, x= "logFC", y = "FDR", lab = hihi$table$symbol)
+plot(tt$table$logFC, -10*log10(tt$table$PValue), main="Volcano plot", xlab="logFC", ylab="-10*log(Pval)")
+# highlight our DE genes
+tol10b.enriched <- tt$table$logFC > 0 & tt$table$FDR < 0.01
+points(tt$table$logFC[tol10b.enriched], -10*log10(tt$table$PValue[tol10b.enriched]), col="red")
+# identify genes enriched in the control
+tol10b.depleted <- tt$table$logFC < 0 & tt$table$FDR < 0.05
+points(tt$table$logFC[tol10b.depleted], -10*log10(tt$table$PValue[tol10b.depleted]), col="green")
 ```
-![](https://github.com/centre-for-virus-research/CVR-VBG-2024/blob/main/images/RNA-Seq-VolcanoPlot.png)
 
 **Task 4**: After running the edgeR code, please check the output files.  How to explore the relationships among samples? How many DE genes do we have? What is the cut-off of the FDR P-value? What are the CPM values?
 
