@@ -242,3 +242,7 @@ The sample is one sample from the following paper:
 Molecular Ecology Resources Volume19, Issue 1, January 2019, Pages 128-143  
 Bergner et al. 2018  
 [https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.12946](https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.12946)
+
+There is also a third sample called **VIZIONS** from this project: Vietnam Initiative on Zoonotic Infections (VIZIONS). The VIZIONS data is from the, specifically this sample on the NCBI SRA - [ERR3179012](https://www.ncbi.nlm.nih.gov/sra/?term=ERR3179012) - and has this abstract: 'Focusing on both clinical and community based high-risk cohorts, this study will generate new insights into the diversity of human pathogens (especially viruses) and into the biological and behavioral processes involved in the emergence of novel pathogens.'
+
+For all three samples there is a subfolder called **Pre** which has the contigs created from a metaspades assembly in a file called **contigs.fasta**. If you have further time these could be analysed via DIAMOND which you learnt about in previous sessiosn.
