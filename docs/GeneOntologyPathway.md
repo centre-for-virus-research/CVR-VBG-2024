@@ -341,5 +341,20 @@ dev.off()
 
 ```
 
+1. Create a new directory “RNA-seq” in your home directory.
+2. In the “RNA-seq” directory, generate a soft link to the following files:
+
+```bash
+	fastq files - /home4/VBG_data/SUBSAMPLED
+	genome - /home4/VBG_data/RNASeq/Human.fa
+	GTF - /home4/VBG_data/RNASeq/Homo_sapiens.GRCh38.107.gtf
+```
+
+3. Perform QC, adapter-trimming, read mapping and generate bam files
+Generate count data from bam files 
+4. Perform DE analysis using edgeR (check whether the order of the samples match the edgeR script, header is absent)
+5. Perform GO (ORA and GSEA) and pathway analysis (MSigDb GSEA)
+
+
 
 
