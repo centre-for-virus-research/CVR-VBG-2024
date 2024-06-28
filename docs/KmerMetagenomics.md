@@ -69,8 +69,8 @@ ls
 
 You should see the FASTQ paired-end read files:
 
-**SRR533978\_1.fq**  
-**SRR533978\_2.fq**
+**SRR533978\_1.fastq**  
+**SRR533978\_2.fastq**
 
 # 2: Removal of human host reads
 
