@@ -341,6 +341,7 @@ dev.off()
 
 ```
 
+# Practicals
 1. Create a new directory “RNA-seq” in your home directory.
 2. In the “RNA-seq” directory, generate a soft link to the following files:
 
