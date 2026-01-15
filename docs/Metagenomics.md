@@ -28,7 +28,7 @@ In the quality assessment practical, we noticed that the sample 00094 did not fi
 
 ```mkdir contigs_temp_dir```
 
-```diamond blastx -d /db/diamond/ViralRefSeqProtein.dmnd2 -p 2 -q 00094_all_samples_contigs.fasta -o 00094_all_samples_viralrefseq.txt -t contigs_temp_dir --top 3 --outfmt 6```
+```diamond blastx -d /db/diamond/ViralRefSeqProtein.dmnd2 -p 2 -q 00094_all_samples_contigs.fasta -o 00094_all_samples_viralrefseq.txt -t contigs_temp_dir --top 3 --outfmt 6  -b12 -c1```
 
 
 3)	Now, we will use the output with KronaTools to produce the visualization. Click the “color by e-value” checkbox. 
@@ -48,4 +48,5 @@ __*Explore the Kronaplot. Are there any matches to Lassavirus or anything simila
 __*What are the differences in the viral hits? Why is this virus not a Mammarenavirus in the kronaplot? Why do you think the database you blast against is important?*__
 
 For more information about these samples and the discovery of this new arenavirus: <https://doi.org/10.1128/mra.00095-22>
+
 
